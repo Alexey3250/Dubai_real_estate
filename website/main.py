@@ -20,3 +20,10 @@ def market_trends(request: Request):
 def about(request: Request):
     return templates.TemplateResponse("about.html", {"request": request})
 
+@app.get("/portfolio/alexey_efimik")
+def alexey_portfolio(request: Request):
+    return templates.TemplateResponse("/portfolio/alexey_efimik.html", {"request": request})
+
+@app.get("/portfolio/ilia_svetlichnyi")
+def ilia_portfolio(request: Request):
+    return templates.TemplateResponse("/portfolio/ilia_svetlichnyi", {"request": request})
