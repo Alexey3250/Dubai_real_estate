@@ -1,0 +1,57 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;  /* Use the bold weight for headers */
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;  /* Use the regular weight for paragraphs */
+}
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Use the bold weight for headers */
+}
+
+.main-content {
+    max-width: 1300px; /* This is an example. Adjust as needed */
+    margin: auto; /* This will center the layout if the screen is wider than max-width */
+    padding: 1em 0; /* This adds padding at the top and bottom of the content */
+}
+
+.container {
+    max-width: 1300px; /* Adjust as necessary */
+    margin: auto;
+    width: 100%; /* This will make the container take up the full width of its parent */
+    padding: 0; /* remove the default padding */
+}
+
+.navbar-nav .nav-link {
+    font-weight: bold; /* Make all links in header bold */
+    color: #000000; /* Make all links in header pure black */
+}
+
+.navbar-nav .nav-link:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+footer {
+    background-color: #000; /* Change footer color to black */
+    color: #fff; /* Change text color to white for better contrast against black background */
+    margin-top: auto;
+}
+
+#main-header {
+    transition: top 0.6s;
+}
+
+#main-header.sticky {
+    top: -100px;
+}

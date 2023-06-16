@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="/">Dubai Real Estate Analytics</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/market-trends">Market Trends</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <!-- Add 'About Us' link here -->
+                        <li class="nav-item">
+                            <a class="nav-link special-link" href="/about">Who We Are</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    
+    
+    <main role="main" class="main-content">
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+
+<footer class="text-white py-4">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-lg-4">
+                <h5>Alexey Efimik</h5>
+                <p>
+                    <a href="https://www.linkedin.com/in/efimik/" target="_blank" class="text-white"><i class="fab fa-linkedin"></i> LinkedIn</a><br>
+                    <a href="https://github.com/Alexey3250" target="_blank" class="text-white"><i class="fab fa-github"></i> GitHub</a><br>
+                    <i class="fas fa-phone"></i> +971 52 78 46 185<br>
+                    <a href="https://t.me/Alexey_Efimik" target="_blank" class="text-white"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <h5>Ilia Svetlichnyi</h5>
+                <p>
+                    <a href="https://www.linkedin.com/in/svetlichnyi-ilia/" target="_blank" class="text-white"><i class="fab fa-linkedin"></i> LinkedIn</a><br>
+                    <!-- Add the relevant GitHub and Phone details here with their respective icons -->
+                    <a href="https://t.me/svetlichnyi_ilia" target="_blank" class="text-white"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <h5>About Us</h5>
+                <p>
+                    <a href="/about" target="_blank" class="btn btn-outline-light btn-sm">Learn more about us</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+    
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
