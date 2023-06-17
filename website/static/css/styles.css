@@ -103,3 +103,15 @@ footer {
     box-sizing: border-box; 
     padding: 20px; 
 }
+
+
+.badge-container {
+    margin-top: 0px;
+    padding-left: 0;
+}
+
+.badge {
+    margin-right: 5px;
+}
+
+
