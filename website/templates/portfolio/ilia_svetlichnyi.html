@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Alexey Efimik's Portfolio</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
-<body>
-    <!-- Include your site header here -->
+{% extends "layout.html" %}
 
+{% block content %}
     <main role="main" class="main-content">
         <h1>Alexey Efimik</h1>
         <h2>Data Scientist</h2>
@@ -30,7 +21,4 @@
             <li>Dummy Project 3</li>
         </ul>
     </main>
-
-    <!-- Include your site footer here -->
-</body>
-</html>
+{% endblock %}

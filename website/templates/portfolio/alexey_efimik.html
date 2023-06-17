@@ -1,36 +1,156 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Alexey Efimik's Portfolio</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
-<body>
-    <!-- Include your site header here -->
+{% extends "layout.html" %}
 
+{% block content %}
     <main role="main" class="main-content">
-        <h1>Alexey Efimik</h1>
-        <h2>Data Scientist</h2>
+        <div class="container text-center">
+            <h1>Alexey Efimik</h1>
+            <img src="https://avatars.githubusercontent.com/u/90410359?v=4" class="rounded-circle img-thumbnail mx-auto d-block" style="width:200px;" alt="Alexey Efimik">
+            <div class="contact-info mt-3">
+                <i class="fas fa-phone-alt"></i> +971-527-846-185
+                <i class="fas fa-envelope"></i> <a href="mailto:a.efimik@gmail.com">a.efimik@gmail.com</a>
+                <i class="fas fa-map-marker-alt"></i> Dubai, U.A.E.
+                <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/Efimik">LinkedIn</a>
+                <i class="fab fa-github"></i> <a href="https://github.com/YourGithubUsername">GitHub</a>
+            </div>
+        </div>
+        <p> </p>
+        
+        <div class="bg-light p-4">
+            <h2>Professional Overview</h2>
+            <p>
+                My name is Alex, a seasoned data professional with international experience. At 17, I moved from Russia to the Czech Republic, mastering a new language to pursue my university studies, where my passion for analytics was kindled. Later, I relocated to Dubai to join Emirates, where I traveled across 75 countries, further honing my adaptability and resilience. Throughout my journeys, my fascination with data analysis and financial modeling continued to grow, manifesting in proficiency in Python, SQL, Tableau, PowerBI, and Microsoft Excel. Today, as I transition into a role as a data analyst or data scientist, I am eager to leverage my international experiences, technical skills, and effective communication abilities to deliver compelling data-driven insights.
+            </p>
+        </div>
+        
+        <div>
+            <h2>Projects</h2>
 
-        <p>Dummy content about Alexey's portfolio. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div>
+                <h5><a href="https://github.com/Alexey3250/Recommender_API">Recommendation system API</a></h5>
+                <ul>
+                    <li>This project focuses on feature preparation, gradient-boost algorithm training and creating an API that would output recommendations in Json format.</li>
+                    <li><strong>Technologies Used:</strong> Python, Pandas, Catboost, FastAPI, SQL</li>
+                </ul>
+                
+                <h5><a href="https://github.com/Alexey3250/Legal-Advisor">GPT-powered whatsup Dubai real estate legal advisor</a></h5>
+                <ul>
+                    <li>This project is using GPT-3.5 API, reads the PDF file with laws, breaks it down into vettorized chunks and fed to the GPT. The application is connected to the whatsup chat bot API where user is able to have a chat with the bot that have the laws in his memory.</li>
+                    <li><strong>Technologies Used:</strong> Python, Flask, twilio, OpenAI API</li>
+                </ul>
+                
+                <h5><a href="https://github.com/Alexey3250/ai50-Tic-Tac-Toe">AI-Powered Tic-Tac-Toe</a></h5>
+                <ul>
+                    <li>This project involves developing an AI-powered Tic-Tac-Toe game using adversarial search and the Minimax algorithm for optimal decision-making. The game, created for the CS50-AI course, employs techniques such as Alpha-Beta pruning to enhance efficiency.</li>
+                    <li><strong>Technologies Used:</strong> Python, Minimax Algorithm, Alpha-Beta Pruning</li>
+                </ul>
+                
+                <h5><a href="https://github.com/Alexey3250/ai50">6 Degrees of Bacon</a></h5>
+                <ul>
+                    <li>CS50-AI Project0-Degrees is the first assignment of CS50 AI, where the task is to implement an algorithm to find the shortest path between two actors without Kevin Bacon.</li>
+                </ul>
+                
+                <h5><a href="https://github.com/Alexey3250/Knights">Knights and Knaves Puzzle Solver</a></h5>
+                <ul>
+                    <li>This project is a Python-based AI solver for the logical "Knights and Knaves" puzzles using propositional logic and model checking.</li>
+                </ul>
+                
+                <h5><a href="https://github.com/Alexey3250/Minesweeper">Minesweeper AI Solver</a></h5>
+                <ul>
+                    <li>This project presents an AI agent capable of playing the Minesweeper game intelligently. Developed as part of the CS50-AI course, the agent applies propositional logic to make safe moves and make inferences, reducing the chances of hitting a mine. When no safe move is discernable, the agent makes a random move. This project is a demonstration of the application of AI knowledge representation and reasoning in game playing.</li>
+                    <li><strong>Technologies Used:</strong> Python, Propositional Logic, Knowledge Representation</li>
+                </ul>
+            </div>
+        </div>
 
-        <h3>Skills</h3>
+       
+
+
+
+        <h2>Work Experience</h2>
+        <div>
+            <h5>Cabin Crew | Emirates | Dubai, U.A.E. | May 2016 - Present</h5>
+            <ul>
+                <li>Worked in a multinational corporation with 160 nationalities, meeting and adapting with a new team on every flight.</li>
+                <li>Visited 75 countries and gained firsthand knowledge of new countries, economies, and cultures.</li>
+                <li>Developed resilience and determination to perform well, even under extreme working hours.</li>
+                <li>Obtained a "Najoum" excellence award and received numerous compliments from customers and supervisors.</li>
+            </ul>
+            
+            <h5>Senior Business Analyst | Unifer | Brno, Czech Republic | June 2014 - May 2016</h5>
+            <ul>
+                <li>Earned a quick promotion due to exemplary performance.</li>
+                <li>Oversaw various teams of 2-4 people and was in charge of task allocation and leading brainstorming sessions.</li>
+                <li>Was responsible for the quality and timely completion of projects.</li>
+                <li>Produced reports and polished presentations directly to stakeholders at the end of the project.</li>
+                <li>Conducted business analysis, including creating cash flow forecasts, preparing and analyzing business plans, business valuation, and strategic marketing research.</li>
+            </ul>
+            
+            <h5>Co-Founder | InBase – Investment Database | Brno, Czech Republic | September 2015 – May 2016</h5>
+            <ul>
+                <li>Created a small sustainable business with a co-founder.</li>
+                <li>Was responsible for marketing and website development, and managed Google Ads campaigns.</li>
+                <li>Conducted price evaluations of businesses and provided consultations on the buying/selling process.</li>
+            </ul>
+            
+            <h5>Intern Financial Analyst | Comsense Capital | Brno, Czech Republic | February 2015 – August 2015</h5>
+            <ul>
+                <li>Reverse engineered multi-input life insurance calculators with 99.8% accuracy.</li>
+                <li>Mined data and used exploratory analysis to create regression models.</li>
+                <li>Developed corporate articles using Bloomberg Terminal.</li>
+            </ul>
+        </div>
+
+
+        <h2>Education</h2>
+        <div class="row">
+
+
+            <div class="col-md-11">
+                <h5><a href="https://www.linkedin.com/school/provozne-ekonomicka-fakulta-mendelovy-univerzity-v-brne/">Faculty of Business and Economics, Mendel University</a> | Brno, Czech Republic | Bachelor Degree | June 2015</h5>
+            </div>
+
+            <div class="col-md-12">
+                <h5>Private Pilot License | Civil Aviation Authority of the Czech Republic | April 2019</h5>
+            </div>
+
+        </div>
+
+
+        <h2>Certifications</h2>
+
+        <div class="row">
+
+            <!-- Google Data Analyst Professional Certificate -->
+            <div class="col-md-6">
+                <h5><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/N436HAQBRVZ6">Google Data Analyst Professional Certificate</a></h5>
+                <p>Coursera | 2021</p>
+            </div>
+
+            <!-- Microsoft Azure Data Scientist Associate -->
+            <div class="col-md-6">
+                <h5><a href="https://www.credly.com/badges/a4c3274d-286a-4612-86cd-2024f9615766/linked_in_profile">Microsoft Azure Fundamentals</a></h5>
+                <p>Microsoft | 2022</p>
+            </div>
+
+            <!-- Harvard CS50: Introduction to Computer Science -->
+            <div class="col-md-6">
+                <h5><a href="https://certificates.cs50.io/ee8f7ceb-2ba4-4ec6-8275-8a57f92bcbef.pdf?size=letter">Harvard CS50: Introduction to Computer Science</a></h5>
+                <p>Harvard University | 2022</p>
+            </div>
+
+        </div>
+
+        <h2>Language Skills</h2>
+        <!-- Add Language Skills Here -->
+
+        <h2>Links</h2>
         <ul>
-            <li>Dummy Skill 1</li>
-            <li>Dummy Skill 2</li>
-            <li>Dummy Skill 3</li>
+            <li><a href="Link_to_Data_Analyst_portfolio_projects">Data Analyst Portfolio Projects</a></li>
+            <li><a href="Link_to_Data_Science_portfolio_projects">Data Science Portfolio Projects</a></li>
+            <li><a href="https://www.linkedin.com/in/efimik/">LinkedIn</a></li>
         </ul>
 
-        <h3>Projects</h3>
-        <ul>
-            <li>Dummy Project 1</li>
-            <li>Dummy Project 2</li>
-            <li>Dummy Project 3</li>
-        </ul>
+        <h2>Misc</h2>
+        This website was coded from scratch using HTML, CSS, and JavaScript and backend is powered by Python and FastAPI.
     </main>
-
-    <!-- Include your site footer here -->
-</body>
-</html>
+{% endblock %}

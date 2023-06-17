@@ -5,10 +5,25 @@ body {
     min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;  /* Use the bold weight for headers */
 }
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;  /* Use the bold weight for headers */
+    padding-top: 30px; /* Adjusts the padding at the top of the h1 elements */
+    padding-bottom: 10px; /* Adjusts the padding at the bottom of the h1 elements */
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;  /* Use the bold weight for headers */
+    padding-top: 20px; /* Adjusts the padding at the top of the h1 elements */
+    padding-bottom: 10px; /* Adjusts the padding at the bottom of the h1 elements */
+}
+
 
 p {
     font-family: 'Montserrat', sans-serif;
@@ -54,4 +69,37 @@ footer {
 
 #main-header.sticky {
     top: -100px;
+}
+
+
+
+
+
+/* section styles */
+.section1 {
+    background-color: #f0f0f0; /* gray */
+    width: 100%;
+    box-sizing: border-box; 
+    padding: 20px; 
+}
+
+.section2 {
+    background-color: #e0e0e0; /* slightly lighter gray */
+    width: 100%;
+    box-sizing: border-box; 
+    padding: 20px; 
+}
+
+.section3 {
+    background-color: #d0d0d0; /* even lighter gray */
+    width: 100%;
+    box-sizing: border-box; 
+    padding: 20px; 
+}
+
+.section4 {
+    background-color: #c0c0c0; /* very light gray */
+    width: 100%;
+    box-sizing: border-box; 
+    padding: 20px; 
 }
