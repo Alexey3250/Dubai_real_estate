@@ -30,6 +30,14 @@ p {
     font-weight: 400;  /* Use the regular weight for paragraphs */
 }
 
+a {
+    color: #0068ff;
+}
+
+a:hover {
+    color: #0056cc;
+}
+
 .navbar-brand {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700; /* Use the bold weight for headers */
@@ -72,7 +80,10 @@ footer {
 }
 
 
-
+.contact-info div {
+    display: inline-block;
+    margin-bottom: 15px;
+}
 
 
 /* section styles */
