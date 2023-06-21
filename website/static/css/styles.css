@@ -85,6 +85,15 @@ footer {
     margin-bottom: 15px;
 }
 
+.contact-info.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-item {
+    display: inline-block;
+    margin-right: 15px;
+}
 
 /* section styles */
 .section1 {
@@ -126,3 +135,21 @@ footer {
 }
 
 
+#cta {
+    color: #333;
+}
+#cta h2 {
+    margin-bottom: 20px;
+}
+#cta .contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#cta .contact-item {
+    margin: 10px;
+}
+#cta .contact-item a {
+    color: #0068ff;
+    text-decoration: none;
+}
