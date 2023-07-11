@@ -12,6 +12,8 @@ from data_visualization import create_market_trend_figure
 import plotly.graph_objects as go
 from pydantic import BaseModel
 
+from typing import Optional, List
+
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
@@ -66,3 +68,30 @@ async def bar_chart():
     chart = Chart(data=chart_data.to_plotly_json(), layout=layout.to_plotly_json())
 
     return JSONResponse(content=json.loads(chart.json(by_alias=True)))
+
+
+class Chart(BaseModel):
+    data: Optional[List[dict]] = []
+    layout: Optional[dict] = {}
+
+@app.get("/market_trends", response_model=Chart)
+def market_trends():
+    data = [
+        dict(x=["2018", "2019", "2020", "2021"], y=[1.2, 1.5, 1.3, 1.4], type='scatter', name='Region A'),
+        dict(x=["2018", "2019", "2020", "2021"], y=[1.3, 1.4, 1.2, 1.5], type='scatter', name='Region B'),
+        dict(x=["2018", "2019", "2020", "2021"], y=[1.4, 1.3, 1.5, 1.2], type='scatter', name='Region C')
+    ]
+
+    layout = {
+        "title": {
+            "text": "Real Estate Prices in Dubai Regions (millions AED)"
+        },
+        "xaxis": {
+            "title": "Year"
+        },
+        "yaxis": {
+            "title": "Price (millions AED)"
+        }
+    }
+
+    return JSONResponse(content=Chart(data=data, layout=layout).dict())

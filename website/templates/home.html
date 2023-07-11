@@ -15,4 +15,15 @@
                 Plotly.newPlot('chartContainer', chartData, chartLayout);
             });
     </script>
+
+<div id="market_trends_chart"></div>
+
+<script>
+    fetch('/market_trends')
+        .then(response => response.json())
+        .then(data => {
+            Plotly.newPlot('market_trends_chart', data.data, data.layout);
+        });
+</script>
+
 {% endblock %}
