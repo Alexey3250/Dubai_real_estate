@@ -1,7 +1,93 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
-<!-- Add your content here -->
+
+<!-- Container for the Dashboard -->
+<div id="dashboard-container">
+  <h1>Real Estate Trends Dashboard</h1>
+  <!-- YOY Performance for the Last Quarter -->
+  <div id="yoyPerformance"></div>
+  <!-- Chart Containers -->
+  <canvas id="quarterlyChart"></canvas>  <!-- Add a canvas for the Chart.js plot -->
+</div>
+
+<!-- Additional Script to Draw Chart -->
+<script>
+  // Function to draw the chart
+  // Function to draw the chart
+  function drawChart(data) {
+    const quarterlyData = data['quarterly_data'];
+    
+    if (!quarterlyData || quarterlyData === 'Loading...') {
+      alert('Quarterly data is still loading. Please refresh the page later.');
+      return;
+    }
+
+    // Filter to keep only the last 3 years
+    const lastThreeYearsData = quarterlyData.slice(-12);  // Assuming 4 quarters per year
+    
+    const labels = lastThreeYearsData.map(row => row['Quarter']);
+    const actualWorthData = lastThreeYearsData.map(row => row['actual_worth']);
+
+    // Calculate YOY performance for the last quarter
+    const lastQuarterWorth = actualWorthData.slice(-1)[0];  // Last quarter data
+    const lastYearSameQuarterWorth = actualWorthData.slice(-5, -4)[0];  // Same quarter from last year
+    const yoyPerformance = ((lastQuarterWorth - lastYearSameQuarterWorth) / lastYearSameQuarterWorth) * 100;
+
+    // Get the element to display YOY performance
+    const yoyElement = document.getElementById('yoyPerformance');
+
+    // Choose the appropriate arrow
+    const arrow = yoyPerformance >= 0 ? '↑' : '↓';
+
+    // Set the text content with arrow
+    yoyElement.innerHTML = `YOY Performance for Last Quarter: ${yoyPerformance.toFixed(2)}% ${arrow}`;
+
+    // Set the style (bold and color)
+    yoyElement.style.fontWeight = 'bold';
+    yoyElement.style.color = yoyPerformance >= 0 ? 'green' : 'red';
+
+    // Display YOY performance
+    document.getElementById('yoyPerformance').innerHTML = `YOY Performance for Last Quarter: ${yoyPerformance.toFixed(2)}%`;
+    
+    const ctx = document.getElementById('quarterlyChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Actual Worth',
+            data: actualWorthData,
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+          }
+        ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: 'Real Estate Trends - Last 3 Years'
+          }
+        }
+      }
+    });
+  }
+
+  // Data from FastAPI is already included in the template
+  const data = {{ data | tojson | safe }};
+  drawChart(data);  // Call the function to draw the chart
+
+
+</script>
 {% endblock %}

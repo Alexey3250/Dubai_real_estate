@@ -3,27 +3,6 @@
 {% block content %}
     <h1>Welcome to my homepage!</h1>
     
-    <!-- Chart Container -->
-    <div id="chartContainer"></div>
 
-    <script>
-        fetch('/bar_chart')
-            .then(response => response.json())
-            .then(data => {
-                var chartData = data['data'];
-                var chartLayout = data['layout'];
-                Plotly.newPlot('chartContainer', chartData, chartLayout);
-            });
-    </script>
-
-<div id="market_trends_chart"></div>
-
-<script>
-    fetch('/market_trends')
-        .then(response => response.json())
-        .then(data => {
-            Plotly.newPlot('market_trends_chart', data.data, data.layout);
-        });
-</script>
 
 {% endblock %}
